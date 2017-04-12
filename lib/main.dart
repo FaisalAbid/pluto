@@ -70,15 +70,15 @@ class _MyHomePageState extends State<MyHomePage> {
     // needs updating rather than having to individually change
     // instances of widgets.
     return new Scaffold(
-      appBar: new AppBar(
-        // Here we take the value from the MyHomePage object that
-        // was created by the App.build method, and use it to set
-        // our appbar title.
-        title: new Text(widget.title),
-      ),
-      body: new Center(
-        child: new PlutoImage.networkWithPlaceholder("http://68.media.tumblr.com/f7e2e01128ca8eb2b9436aa3eb2a0a33/tumblr_ogwlnpSpcU1sikc68o1_1280.png", new Image.asset("assets/placeholder.png"))
-      )
-    );
+        appBar: new AppBar(
+          // Here we take the value from the MyHomePage object that
+          // was created by the App.build method, and use it to set
+          // our appbar title.
+          title: new Text(widget.title),
+        ),
+        body: new Center(
+            child: new PlutoImage.networkWithPlaceholder(
+                "http://68.media.tumblr.com/f7e2e01128ca8eb2b9436aa3eb2a0a33/tumblr_ogwlnpSpcU1sikc68o1_1280.png",
+                new Image.asset("assets/placeholder.png"))));
   }
 }

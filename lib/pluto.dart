@@ -10,8 +10,7 @@ export 'package:flutter/services.dart' show NetworkImage;
 ///
 /// This is the object that must be passed to [BoxPainter.paint] and to
 /// [ImageProvider.resolve].
-ImageConfiguration createLocalImageConfiguration(BuildContext context,
-    {Size size}) {
+ImageConfiguration createLocalImageConfiguration(BuildContext context, {Size size}) {
   return new ImageConfiguration(
       bundle: DefaultAssetBundle.of(context),
       devicePixelRatio: MediaQuery.of(context).devicePixelRatio,
@@ -26,15 +25,15 @@ class PlutoImage extends StatefulWidget {
   /// The [src], [scale], and [repeat] arguments must not be null.
   PlutoImage.networkWithPlaceholder(String src, this.placeHolder,
       {Key key,
-        double scale: 1.0,
-        this.width,
-        this.height,
-        this.color,
-        this.fit,
-        this.alignment,
-        this.repeat: ImageRepeat.noRepeat,
-        this.centerSlice,
-        this.gaplessPlayback: false})
+      double scale: 1.0,
+      this.width,
+      this.height,
+      this.color,
+      this.fit,
+      this.alignment,
+      this.repeat: ImageRepeat.noRepeat,
+      this.centerSlice,
+      this.gaplessPlayback: false})
       : image = new NetworkImage(src, scale: scale),
         super(key: key);
 
@@ -131,9 +130,7 @@ class _ImageState extends State<PlutoImage> {
   void _resolveImage() {
     final ImageStream oldImageStream = _imageStream;
     _imageStream = widget.image.resolve(createLocalImageConfiguration(context,
-        size: widget.width != null && widget.height != null
-            ? new Size(widget.width, widget.height)
-            : null));
+        size: widget.width != null && widget.height != null ? new Size(widget.width, widget.height) : null));
     assert(_imageStream != null);
     if (_imageStream.key != oldImageStream?.key) {
       oldImageStream?.removeListener(_handleImageChanged);
